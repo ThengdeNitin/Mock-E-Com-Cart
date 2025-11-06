@@ -1,13 +1,12 @@
 # Mock-E-Com-Cart
 An assignment from Nexora
-🛒 MERN Stack E-Commerce Application
 
-A full-featured **E-Commerce Web Application** built using the **MERN Stack (MongoDB, Express.js, React.js, Node.js)**.
+A full-featured **Mock-E-Com-Cart Web Application** built using the **MERN Stack (MongoDB, Express.js, React.js, Node.js)**.
 It provides a seamless shopping experience with product listing, cart management, checkout, authentication, and admin controls.
 
-🚀 Features
+Features
 
-👨‍💻 User Features
+User Features
 - User Registration and Login (JWT Authentication)
 - Browse Products by Category, Price, and Ratings
 - Add to Cart / Remove from Cart
@@ -16,14 +15,14 @@ It provides a seamless shopping experience with product listing, cart management
 - Update Profile and Password
 - Responsive UI for Mobile and Desktop
 
-🛠️ Admin Features
+Admin Features
 - Manage (Add / Edit / Delete) Products
 - Manage Categories and Stock
 - View and Manage Orders
 - Manage Users
 - Dashboard with Sales Statistics
 
-⚙️ System Features
+System Features
 - Secure REST APIs with Express.js
 - MongoDB for Data Storage
 - JWT & Bcrypt for Authentication
@@ -33,7 +32,7 @@ It provides a seamless shopping experience with product listing, cart management
 
 ---
 
-🧱 Tech Stack
+Tech Stack
 
 | Layer | Technology |
 |--------|-------------|
