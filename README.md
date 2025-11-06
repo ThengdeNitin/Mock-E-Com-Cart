@@ -40,4 +40,3 @@ Tech Stack
 | **Backend** | Node.js, Express.js |
 | **Database** | MongoDB with Mongoose |
 | **Authentication** | JSON Web Token (JWT) |
-| **Deployment** | Vercel, MongoDB Atlas (DB) |
