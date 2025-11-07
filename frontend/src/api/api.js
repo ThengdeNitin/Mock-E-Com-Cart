@@ -7,7 +7,7 @@ export const getProducts = async () => {
     const res = await axios.get(`${API_BASE}/products`);
     return res.data || [];
   } catch (err) {
-    console.error("❌ Error fetching products:", err.response?.data || err.message);
+    console.error("Error fetching products:", err.response?.data || err.message);
     return [];
   }
 };
@@ -22,7 +22,7 @@ export const getCart = async () => {
       total: data.total || 0,
     };
   } catch (err) {
-    console.error("❌ Error fetching cart:", err.response?.data || err.message);
+    console.error("Error fetching cart:", err.response?.data || err.message);
     return { cartItems: [], total: 0 };
   }
 };
@@ -33,7 +33,7 @@ export const addToCart = async (productId, qty = 1) => {
     const res = await axios.post(`${API_BASE}/cart`, { productId, qty });
     return res.data;
   } catch (err) {
-    console.error("❌ Error adding to cart:", err.response?.data || err.message);
+    console.error("Error adding to cart:", err.response?.data || err.message);
     throw err;
   }
 };
@@ -44,7 +44,7 @@ export const deleteCartItem = async (id) => {
     const res = await axios.delete(`${API_BASE}/cart/${id}`);
     return res.data;
   } catch (err) {
-    console.error("❌ Error removing cart item:", err.response?.data || err.message);
+    console.error("Error removing cart item:", err.response?.data || err.message);
     throw err;
   }
 };
@@ -54,7 +54,19 @@ export const checkout = async (cartItems) => {
     const res = await axios.post(`${API_BASE}/checkout`, { cartItems });
     return res.data;
   } catch (err) {
-    console.error("❌ Error during checkout:", err.response?.data || err.message);
+    console.error("Error during checkout:", err.response?.data || err.message);
     throw err;
   }
 };
+
+export const getOrders = async () => {
+  try {
+    const res = await axios.get(`${API_BASE}/order`); 
+    return res.data;
+  } catch (err) {
+    console.error("Error fetching orders:", err.response?.data || err.message);
+    return [];
+  }
+};
+
+

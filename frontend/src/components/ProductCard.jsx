@@ -3,6 +3,7 @@ import { addToCart } from '../api/api';
 
 const ProductCard = ({ product, refreshCart }) => {
   const [loading, setLoading] = useState(false);
+  const url = `http://localhost:5000`;
 
   const handleAdd = async () => {
     setLoading(true);
@@ -19,12 +20,12 @@ const ProductCard = ({ product, refreshCart }) => {
   return (
     <div className="flex flex-col items-center w-48 border rounded-lg p-3 bg-white shadow-sm hover:shadow-md transition-all">
       <img
-        src={product.image}
+        src={`${url}${product.image}`}
         alt={product.name}
-        className="w-32 h-32 object-cover rounded-md mb-2"
+        className="w-42 h-42 object-cover rounded-md mb-2"
       />
       <h3 className="text-sm font-semibold text-center">{product.name}</h3>
-      <p className="text-gray-600 text-sm mb-2">${product.price}</p>
+      <p className="text-gray-600 text-sm mb-2">₹{product.price}</p>
       <button
         onClick={handleAdd}
         disabled={loading}
