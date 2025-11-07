@@ -85,7 +85,7 @@ const Cart = ({ cartItems, refreshCart, onCheckout }) => {
 
             <div className="mt-6 p-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl flex justify-between items-center shadow-lg">
               <span className="text-lg font-medium">Total</span>
-              <span className="text-2xl font-bold">${total.toFixed(2)}</span>
+              <span className="text-2xl font-bold">₹{total.toFixed(2)}</span>
             </div>
 
             <div className="flex justify-end mt-4">
