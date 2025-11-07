@@ -26,7 +26,7 @@ Tech Stack
 | Layer        | Technology                                  |
 | ------------ | ------------------------------------------- |
 | **Frontend** | React.js, React Router, Axios, Tailwind CSS, lucide-react |
-| **Backend**  | Node.js, Express.js , cors, mongoose, nodemon                       |
+| **Backend**  | Node.js, Express.js , cors, mongoose, nodemon             |
 | **Database** | MongoDB with Mongoose                       |
 
 
