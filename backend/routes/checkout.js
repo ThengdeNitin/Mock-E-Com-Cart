@@ -8,7 +8,7 @@ const Product = require('../models/Product');
 router.post('/', async (req, res) => {
 try {
 const { name, email } = req.body;
-const items = await CartItem.find({ userId: 'guest' }).populate('productId', 'name price image').lean();
+const items = await CartItem.find({ userId: 'guest' }).populate('productId').lean();
 if (!items.length) return res.status(400).json({ error: 'Cart is empty' });
 
 
