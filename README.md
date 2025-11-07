@@ -32,3 +32,8 @@ Tech Stack
 
 Screen Shots
 
+![Home Page](<Screenshot 2025-11-07 135433.png>)
+![Cart Page](<Screenshot 2025-11-07 135547.png>) 
+![Checkout Page](<Screenshot 2025-11-07 135451.png>) 
+![Checkout Page](<Screenshot 2025-11-07 135520.png>) 
+![Order History](<Screenshot 2025-11-07 135532.png>)
