@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import Home from './pages/Home';
-import Cart from './components/Card';
-import CheckoutModal from './components/CheckoutModel';
-import { getCart } from './api/api';
+import React, { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Cart from "./components/Card";
+import CheckoutModal from "./components/CheckoutModel";
+import { getCart } from "./api/api";
 
 function App() {
-  const [cartItems, setCartItems] = useState([]);
+  const [cart, setCart] = useState([]);
   const [showCheckout, setShowCheckout] = useState(false);
 
   const fetchCart = async () => {
     const data = await getCart();
-    setCartItems(data.cartItems || []);
+    setCart(data.cartItems || []);
   };
 
   useEffect(() => {
@@ -20,23 +21,28 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-50">
       <header className="bg-indigo-600 text-white p-4 flex justify-between items-center">
-        <h1 className="text-2xl font-bold">🛍️ Vibe Commerce</h1>
-        <button
-          onClick={() => setShowCheckout(true)}
-          className="bg-white text-indigo-600 px-4 py-2 rounded font-semibold hover:bg-indigo-100"
-        >
-          Checkout ({cartItems.length})
-        </button>
+        <h1 className="text-2xl font-bold">🛍️ Mock E-Commerce</h1>
       </header>
 
       <main className="p-6">
-        <Home refreshCart={fetchCart} />
-        <Cart refreshCart={fetchCart} />
+        <Routes>
+          <Route path="/" element={<Home refreshCart={fetchCart} cart={cart} />} />
+          <Route
+            path="/cart"
+            element={
+              <Cart
+                cartItems={cart}
+                refreshCart={fetchCart}
+                onCheckout={() => setShowCheckout(true)}
+              />
+            }
+          />
+        </Routes>
       </main>
 
       {showCheckout && (
         <CheckoutModal
-          cartItems={cartItems}
+          cartItems={cart}
           onClose={() => setShowCheckout(false)}
           refreshCart={fetchCart}
         />

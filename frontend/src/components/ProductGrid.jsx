@@ -13,11 +13,14 @@ const ProductGrid = ({ refreshCart }) => {
   }, []);
 
   return (
-    <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
+    <>
+     <div className="flex flex-wrap justify-center gap-4 mt-6">
       {products.map((p) => (
         <ProductCard key={p._id} product={p} refreshCart={refreshCart} />
       ))}
     </div>
+    </>
+   
   );
 };
 
