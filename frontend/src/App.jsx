@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Cart from "./components/Card";
 import CheckoutModal from "./components/CheckoutModel";
-import OrderHistory from "./components/History";
 import { getCart } from "./api/api";
 
 function App() {
@@ -27,10 +26,7 @@ function App() {
 
       <main className="p-6">
         <Routes>
-          <Route
-            path="/"
-            element={<Home refreshCart={fetchCart} cart={cart} />}
-          />
+          <Route path="/" element={<Home refreshCart={fetchCart} cart={cart} />} />
           <Route
             path="/cart"
             element={
@@ -40,10 +36,6 @@ function App() {
                 onCheckout={() => setShowCheckout(true)}
               />
             }
-          />
-          <Route
-            path="/history"
-            element={<OrderHistory />} 
           />
         </Routes>
       </main>

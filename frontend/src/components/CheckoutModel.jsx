@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { checkout } from "../api/api";
-import { CheckCircle2, X } from "lucide-react";
+import { CheckCircle2, X } from "lucide-react"; // optional icons
 
 const CheckoutModal = ({ cartItems, onClose, refreshCart }) => {
   const [form, setForm] = useState({ name: "", email: "" });
@@ -38,7 +38,7 @@ const CheckoutModal = ({ cartItems, onClose, refreshCart }) => {
             </h2>
             <p className="text-gray-600">Order ID: {receipt.orderId}</p>
             <p className="text-gray-800 font-medium mt-2">
-              Total: ₹{receipt.total}
+              Total: ${receipt.total}
             </p>
             <p className="text-sm text-gray-500 mt-1">
               {new Date(receipt.createdAt).toLocaleString()}
