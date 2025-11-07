@@ -54,7 +54,7 @@ router.post("/", async (req, res) => {
 
     res.json({ success: true, item });
   } catch (err) {
-    console.error("❌ Error in POST /api/cart:", err);
+    console.error("Error in POST /api/cart:", err);
     res.status(500).json({ error: "Server error" });
   }
 });
