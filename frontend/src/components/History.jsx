@@ -10,7 +10,6 @@ const History = () => {
     const fetchOrders = async () => {
       const data = await getOrders();
       setOrders(data || []);
-      console.log(data);
     };
     fetchOrders();
   }, []);
@@ -39,17 +38,6 @@ const History = () => {
               <p className="font-semibold">Order ID: {order._id}</p>
               <p>Date: {new Date(order.createdAt).toLocaleString()}</p>
               <p>Total: ₹{order.total}</p>
-
-              <div className="mt-2 space-y-1">
-                {order.items?.map((item, idx) => (
-                  <div key={idx} className="flex justify-between text-sm">
-                    <span>
-                      {item._Id?.name || "Product"} × {item.qty}
-                    </span>
-                    <span>₹{item.price * item.qty}</span>
-                  </div>
-                ))}
-              </div>
             </div>
           ))}
         </div>
